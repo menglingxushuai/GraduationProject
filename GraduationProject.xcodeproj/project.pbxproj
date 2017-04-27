@@ -9,25 +9,45 @@
 /* Begin PBXBuildFile section */
 		314082AB1EB1D013003F5BF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 314082AA1EB1D013003F5BF3 /* main.m */; };
 		314082AE1EB1D013003F5BF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 314082AD1EB1D013003F5BF3 /* AppDelegate.m */; };
-		314082B11EB1D013003F5BF3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314082B01EB1D013003F5BF3 /* ViewController.m */; };
 		314082B41EB1D013003F5BF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 314082B21EB1D013003F5BF3 /* Main.storyboard */; };
 		314082B71EB1D013003F5BF3 /* GraduationProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 314082B51EB1D013003F5BF3 /* GraduationProject.xcdatamodeld */; };
 		314082B91EB1D013003F5BF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 314082B81EB1D013003F5BF3 /* Assets.xcassets */; };
 		314082BC1EB1D013003F5BF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 314082BA1EB1D013003F5BF3 /* LaunchScreen.storyboard */; };
+		314082E31EB1DD84003F5BF3 /* UIView+SSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 314082E21EB1DD84003F5BF3 /* UIView+SSExtension.m */; };
+		314082E61EB1DF00003F5BF3 /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 314082E51EB1DF00003F5BF3 /* UIBarButtonItem+Item.m */; };
+		314082E91EB1DF8E003F5BF3 /* NSString+IsBlank.m in Sources */ = {isa = PBXBuildFile; fileRef = 314082E81EB1DF8E003F5BF3 /* NSString+IsBlank.m */; };
+		314082ED1EB1E116003F5BF3 /* BSAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314082EB1EB1E116003F5BF3 /* BSAdViewController.m */; };
+		314082EE1EB1E116003F5BF3 /* BSAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 314082EC1EB1E116003F5BF3 /* BSAdViewController.xib */; };
+		314082F11EB1E24A003F5BF3 /* CALayer+XibBorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 314082F01EB1E24A003F5BF3 /* CALayer+XibBorderColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		314082A61EB1D013003F5BF3 /* GraduationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraduationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		314082AA1EB1D013003F5BF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		314082AC1EB1D013003F5BF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		314082AD1EB1D013003F5BF3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		314082AF1EB1D013003F5BF3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		314082B01EB1D013003F5BF3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		314082AA1EB1D013003F5BF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../main.m; sourceTree = "<group>"; };
+		314082AC1EB1D013003F5BF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
+		314082AD1EB1D013003F5BF3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
 		314082B31EB1D013003F5BF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		314082B61EB1D013003F5BF3 /* GraduationProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GraduationProject.xcdatamodel; sourceTree = "<group>"; };
 		314082B81EB1D013003F5BF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		314082BB1EB1D013003F5BF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		314082BD1EB1D013003F5BF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		314082DB1EB1D784003F5BF3 /* EfficientDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfficientDefine.h; sourceTree = "<group>"; };
+		314082DC1EB1D891003F5BF3 /* ZhyBishe.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhyBishe.pch; sourceTree = "<group>"; };
+		314082DD1EB1D8CF003F5BF3 /* BiShe_URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiShe_URL.h; sourceTree = "<group>"; };
+		314082DE1EB1D8E5003F5BF3 /* Bishe_Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bishe_Color.h; sourceTree = "<group>"; };
+		314082DF1EB1D90A003F5BF3 /* BiShe_Sinleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BiShe_Sinleton.h; sourceTree = "<group>"; };
+		314082E01EB1DC78003F5BF3 /* BiShe_Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BiShe_Frame.h; sourceTree = "<group>"; };
+		314082E11EB1DD84003F5BF3 /* UIView+SSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SSExtension.h"; sourceTree = "<group>"; };
+		314082E21EB1DD84003F5BF3 /* UIView+SSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SSExtension.m"; sourceTree = "<group>"; };
+		314082E41EB1DF00003F5BF3 /* UIBarButtonItem+Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Item.h"; sourceTree = "<group>"; };
+		314082E51EB1DF00003F5BF3 /* UIBarButtonItem+Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Item.m"; sourceTree = "<group>"; };
+		314082E71EB1DF8E003F5BF3 /* NSString+IsBlank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IsBlank.h"; sourceTree = "<group>"; };
+		314082E81EB1DF8E003F5BF3 /* NSString+IsBlank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IsBlank.m"; sourceTree = "<group>"; };
+		314082EA1EB1E116003F5BF3 /* BSAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAdViewController.h; sourceTree = "<group>"; };
+		314082EB1EB1E116003F5BF3 /* BSAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAdViewController.m; sourceTree = "<group>"; };
+		314082EC1EB1E116003F5BF3 /* BSAdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSAdViewController.xib; sourceTree = "<group>"; };
+		314082EF1EB1E24A003F5BF3 /* CALayer+XibBorderColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+XibBorderColor.h"; sourceTree = "<group>"; };
+		314082F01EB1E24A003F5BF3 /* CALayer+XibBorderColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+XibBorderColor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +80,7 @@
 		314082A81EB1D013003F5BF3 /* GraduationProject */ = {
 			isa = PBXGroup;
 			children = (
-				314082AC1EB1D013003F5BF3 /* AppDelegate.h */,
-				314082AD1EB1D013003F5BF3 /* AppDelegate.m */,
-				314082AF1EB1D013003F5BF3 /* ViewController.h */,
-				314082B01EB1D013003F5BF3 /* ViewController.m */,
+				314082C31EB1D483003F5BF3 /* Classes */,
 				314082B21EB1D013003F5BF3 /* Main.storyboard */,
 				314082B81EB1D013003F5BF3 /* Assets.xcassets */,
 				314082BA1EB1D013003F5BF3 /* LaunchScreen.storyboard */,
@@ -77,9 +94,219 @@
 		314082A91EB1D013003F5BF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				314082AA1EB1D013003F5BF3 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		314082C31EB1D483003F5BF3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				314082F21EB1E57C003F5BF3 /* Tool(工具) */,
+				314082C41EB1D483003F5BF3 /* AD(广告) */,
+				314082D61EB1D483003F5BF3 /* Video(视频) */,
+				314082C81EB1D483003F5BF3 /* Essay(文章) */,
+				314082CC1EB1D483003F5BF3 /* FM(广播) */,
+				314082D01EB1D483003F5BF3 /* Me(我的) */,
+				314082D41EB1D483003F5BF3 /* Other(其它) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		314082C41EB1D483003F5BF3 /* AD(广告) */ = {
+			isa = PBXGroup;
+			children = (
+				314082C51EB1D483003F5BF3 /* Controller */,
+				314082C61EB1D483003F5BF3 /* Model */,
+				314082C71EB1D483003F5BF3 /* View */,
+			);
+			path = "AD(广告)";
+			sourceTree = "<group>";
+		};
+		314082C51EB1D483003F5BF3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				314082EA1EB1E116003F5BF3 /* BSAdViewController.h */,
+				314082EB1EB1E116003F5BF3 /* BSAdViewController.m */,
+				314082EC1EB1E116003F5BF3 /* BSAdViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		314082C61EB1D483003F5BF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		314082C71EB1D483003F5BF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		314082C81EB1D483003F5BF3 /* Essay(文章) */ = {
+			isa = PBXGroup;
+			children = (
+				314082C91EB1D483003F5BF3 /* Controller */,
+				314082CA1EB1D483003F5BF3 /* Model */,
+				314082CB1EB1D483003F5BF3 /* View */,
+			);
+			path = "Essay(文章)";
+			sourceTree = "<group>";
+		};
+		314082C91EB1D483003F5BF3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		314082CA1EB1D483003F5BF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		314082CB1EB1D483003F5BF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		314082CC1EB1D483003F5BF3 /* FM(广播) */ = {
+			isa = PBXGroup;
+			children = (
+				314082CD1EB1D483003F5BF3 /* Controller */,
+				314082CE1EB1D483003F5BF3 /* Model */,
+				314082CF1EB1D483003F5BF3 /* View */,
+			);
+			path = "FM(广播)";
+			sourceTree = "<group>";
+		};
+		314082CD1EB1D483003F5BF3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		314082CE1EB1D483003F5BF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		314082CF1EB1D483003F5BF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		314082D01EB1D483003F5BF3 /* Me(我的) */ = {
+			isa = PBXGroup;
+			children = (
+				314082D11EB1D483003F5BF3 /* Controller */,
+				314082D21EB1D483003F5BF3 /* Model */,
+				314082D31EB1D483003F5BF3 /* View */,
+			);
+			path = "Me(我的)";
+			sourceTree = "<group>";
+		};
+		314082D11EB1D483003F5BF3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		314082D21EB1D483003F5BF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		314082D31EB1D483003F5BF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		314082D41EB1D483003F5BF3 /* Other(其它) */ = {
+			isa = PBXGroup;
+			children = (
+				314082D51EB1D483003F5BF3 /* Category(类目) */,
+				314082AA1EB1D013003F5BF3 /* main.m */,
+				314082AC1EB1D013003F5BF3 /* AppDelegate.h */,
+				314082AD1EB1D013003F5BF3 /* AppDelegate.m */,
+				314082DB1EB1D784003F5BF3 /* EfficientDefine.h */,
+				314082E01EB1DC78003F5BF3 /* BiShe_Frame.h */,
+				314082DD1EB1D8CF003F5BF3 /* BiShe_URL.h */,
+				314082DE1EB1D8E5003F5BF3 /* Bishe_Color.h */,
+				314082DF1EB1D90A003F5BF3 /* BiShe_Sinleton.h */,
+				314082DC1EB1D891003F5BF3 /* ZhyBishe.pch */,
+			);
+			path = "Other(其它)";
+			sourceTree = "<group>";
+		};
+		314082D51EB1D483003F5BF3 /* Category(类目) */ = {
+			isa = PBXGroup;
+			children = (
+				314082EF1EB1E24A003F5BF3 /* CALayer+XibBorderColor.h */,
+				314082F01EB1E24A003F5BF3 /* CALayer+XibBorderColor.m */,
+				314082E11EB1DD84003F5BF3 /* UIView+SSExtension.h */,
+				314082E21EB1DD84003F5BF3 /* UIView+SSExtension.m */,
+				314082E41EB1DF00003F5BF3 /* UIBarButtonItem+Item.h */,
+				314082E51EB1DF00003F5BF3 /* UIBarButtonItem+Item.m */,
+				314082E71EB1DF8E003F5BF3 /* NSString+IsBlank.h */,
+				314082E81EB1DF8E003F5BF3 /* NSString+IsBlank.m */,
+			);
+			path = "Category(类目)";
+			sourceTree = "<group>";
+		};
+		314082D61EB1D483003F5BF3 /* Video(视频) */ = {
+			isa = PBXGroup;
+			children = (
+				314082D71EB1D483003F5BF3 /* Controller */,
+				314082D81EB1D483003F5BF3 /* Model */,
+				314082D91EB1D483003F5BF3 /* View */,
+			);
+			path = "Video(视频)";
+			sourceTree = "<group>";
+		};
+		314082D71EB1D483003F5BF3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		314082D81EB1D483003F5BF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		314082D91EB1D483003F5BF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		314082F21EB1E57C003F5BF3 /* Tool(工具) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Tool(工具)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +340,7 @@
 				TargetAttributes = {
 					314082A51EB1D013003F5BF3 = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = L54C4JJK3H;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -140,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				314082EE1EB1E116003F5BF3 /* BSAdViewController.xib in Resources */,
 				314082BC1EB1D013003F5BF3 /* LaunchScreen.storyboard in Resources */,
 				314082B91EB1D013003F5BF3 /* Assets.xcassets in Resources */,
 				314082B41EB1D013003F5BF3 /* Main.storyboard in Resources */,
@@ -153,10 +382,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				314082B11EB1D013003F5BF3 /* ViewController.m in Sources */,
+				314082E91EB1DF8E003F5BF3 /* NSString+IsBlank.m in Sources */,
 				314082AE1EB1D013003F5BF3 /* AppDelegate.m in Sources */,
+				314082E61EB1DF00003F5BF3 /* UIBarButtonItem+Item.m in Sources */,
+				314082ED1EB1E116003F5BF3 /* BSAdViewController.m in Sources */,
 				314082AB1EB1D013003F5BF3 /* main.m in Sources */,
+				314082E31EB1DD84003F5BF3 /* UIView+SSExtension.m in Sources */,
 				314082B71EB1D013003F5BF3 /* GraduationProject.xcdatamodeld in Sources */,
+				314082F11EB1E24A003F5BF3 /* CALayer+XibBorderColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,10 +511,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L54C4JJK3H;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GraduationProject/Classes/Other(其它)/ZhyBishe.pch";
 				INFOPLIST_FILE = GraduationProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhy.bishe.GraduationProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -289,10 +527,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L54C4JJK3H;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GraduationProject/Classes/Other(其它)/ZhyBishe.pch";
 				INFOPLIST_FILE = GraduationProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhy.bishe.GraduationProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -315,6 +558,7 @@
 				314082C21EB1D013003F5BF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

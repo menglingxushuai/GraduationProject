@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BSAdViewController.h
 //  GraduationProject
 //
 //  Created by 孟玲旭 on 2017/4/27.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BSAdViewController : UIViewController
 
 @end
-

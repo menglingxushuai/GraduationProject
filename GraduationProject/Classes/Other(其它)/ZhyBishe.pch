@@ -1,0 +1,21 @@
+//
+//  ZhyBishe.pch
+//  GraduationProject
+//
+//  Created by 孟玲旭 on 2017/4/27.
+//  Copyright © 2017年 郑淮予. All rights reserved.
+//
+
+#ifndef ZhyBishe_pch
+#define ZhyBishe_pch
+
+#import "EfficientDefine.h"
+#import "BiShe_Frame.h"
+#import "BiShe_URL.h"
+#import "Bishe_Color.h"
+#import "BiShe_Sinleton.h"
+#import "UIView+SSExtension.h"
+#import "UIBarButtonItem+Item.h"
+#import "NSString+IsBlank.h"
+
+#endif /* ZhyBishe_pch */

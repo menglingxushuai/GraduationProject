@@ -2,12 +2,11 @@
 //  AppDelegate.m
 //  GraduationProject
 //
-//  Created by 孟玲旭 on 2017/4/27.
 //  Copyright © 2017年 郑淮予. All rights reserved.
 //
 
 #import "AppDelegate.h"
-
+#import "BSAdViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +15,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    
+    // 1.创建窗口
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    // 2.设置窗口根控制器
+    BSAdViewController *adVc = [[BSAdViewController alloc] init];
+    // init ->  initWithNibName 1.首先判断有没有指定nibName 2.判断下有没有跟类名同名xib
+    self.window.rootViewController = adVc;
+    
+    // 3.显示窗口 1.成为UIApplication主窗口 2.
+    [self.window makeKeyAndVisible];
+    
+    
+    
     return YES;
 }
 
