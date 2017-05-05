@@ -10,6 +10,14 @@
 #define EfficientDefine_h
 
 
+// 判断数组不为空
+#define ArrayHave(arr) arr != nil && ![arr isKindOfClass:[NSNull class]] && arr.count != 0
+
+// keyWindow
+#define kWindow [UIApplication sharedApplication].keyWindow
+
+
+
 //-------------------打印日志-------------------------
 //DEBUG  模式下打印日志,当前行
 #ifdef DEBUG

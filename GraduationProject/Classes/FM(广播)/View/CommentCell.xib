@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="87" id="KGk-i7-Jjw" customClass="CommentCell">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="87"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="86.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="占位图" translatesAutoresizingMaskIntoConstraints="NO" id="pVv-k7-BFL">
+                        <rect key="frame" x="10" y="10" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="36" id="VQp-Za-9v9"/>
+                            <constraint firstAttribute="width" secondItem="pVv-k7-BFL" secondAttribute="height" id="bWS-Mb-XdD"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="18"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-05-05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwD-vJ-TDA">
+                        <rect key="frame" x="112" y="10" width="83.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评论" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qov-44-H4T">
+                        <rect key="frame" x="56" y="38" width="294" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大鸭梨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2Z-sH-uMN">
+                        <rect key="frame" x="56" y="10" width="46" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gwD-vJ-TDA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="BJm-Eh-t4r"/>
+                    <constraint firstItem="gwD-vJ-TDA" firstAttribute="leading" secondItem="S2Z-sH-uMN" secondAttribute="trailing" constant="10" id="OYI-hr-uM0"/>
+                    <constraint firstItem="pVv-k7-BFL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="VvA-Rg-3AZ"/>
+                    <constraint firstAttribute="trailing" secondItem="qov-44-H4T" secondAttribute="trailing" constant="10" id="avB-m1-FCu"/>
+                    <constraint firstItem="pVv-k7-BFL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="oc0-bf-dnO"/>
+                    <constraint firstItem="S2Z-sH-uMN" firstAttribute="leading" secondItem="pVv-k7-BFL" secondAttribute="trailing" constant="10" id="pcg-In-8op"/>
+                    <constraint firstItem="qov-44-H4T" firstAttribute="top" secondItem="S2Z-sH-uMN" secondAttribute="bottom" constant="10" id="sJa-Fb-PHy"/>
+                    <constraint firstItem="S2Z-sH-uMN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="x3N-Va-FTa"/>
+                    <constraint firstItem="qov-44-H4T" firstAttribute="leading" secondItem="pVv-k7-BFL" secondAttribute="trailing" constant="10" id="xnW-dc-AhL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="MyImg" destination="pVv-k7-BFL" id="ru6-T4-Tkh"/>
+                <outlet property="MyName" destination="S2Z-sH-uMN" id="AIm-MB-8Ap"/>
+                <outlet property="comment" destination="qov-44-H4T" id="mQs-Mf-fGm"/>
+                <outlet property="time" destination="gwD-vJ-TDA" id="erz-GK-5DN"/>
+            </connections>
+            <point key="canvasLocation" x="-129" y="84"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="占位图" width="600" height="577"/>
+    </resources>
+</document>

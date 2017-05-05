@@ -10,7 +10,7 @@
 
 @interface UIBarButtonItem (Item)
 // 快速创建UIBarButtonItem
-+ (UIBarButtonItem *)itemWithimage:(UIImage *)image highImage:(UIImage *)highImage target:(id)target action:(SEL)action;
++ (UIBarButtonItem *)itemWithimage:(NSString *)image highImage:(UIImage *)highImage target:(id)target action:(SEL)action;
 
 + (UIBarButtonItem *)backItemWithimage:(UIImage *)image highImage:(UIImage *)highImage target:(id)target action:(SEL)action title:(NSString *)title;
 

@@ -9,10 +9,10 @@
 #import "UIBarButtonItem+Item.h"
 
 @implementation UIBarButtonItem (Item)
-+ (UIBarButtonItem *)itemWithimage:(UIImage *)image highImage:(UIImage *)highImage target:(id)target action:(SEL)action
++ (UIBarButtonItem *)itemWithimage:(NSString *)image highImage:(UIImage *)highImage target:(id)target action:(SEL)action
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setImage:image forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setImage:highImage forState:UIControlStateHighlighted];
     [btn sizeToFit];
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];

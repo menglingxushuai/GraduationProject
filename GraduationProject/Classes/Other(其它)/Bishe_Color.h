@@ -30,6 +30,11 @@
 #define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
 #define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 
+//主颜色
+#define MainColor RGBA(34, 198, 188, 1)
+
+//白色
+#define WhiteColor [UIColor whiteColor]
 
 
 #endif /* Bishe_Color_h */

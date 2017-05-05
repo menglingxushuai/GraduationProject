@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoDetailViewController">
+            <connections>
+                <outlet property="bgScroller" destination="UI2-tw-e4E" id="kCf-v4-jQt"/>
+                <outlet property="currentSum" destination="gmd-W4-8w2" id="mVn-rt-k7g"/>
+                <outlet property="imgsum" destination="MI1-TK-kZl" id="f9a-Tj-Eyh"/>
+                <outlet property="note" destination="KBi-o3-OHn" id="dov-ga-zMG"/>
+                <outlet property="setname" destination="i1F-7j-y8g" id="5lx-x4-NTQ"/>
+                <outlet property="topHeight" destination="Nx3-xi-aER" id="OPM-d3-QIZ"/>
+                <outlet property="view" destination="6FN-XZ-VWO" id="f7W-g8-nJ2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="6FN-XZ-VWO">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UI2-tw-e4E">
+                    <rect key="frame" x="0.0" y="200" width="375" height="200"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="bAM-CE-7XH"/>
+                    </constraints>
+                </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MI1-TK-kZl">
+                    <rect key="frame" x="344" y="410" width="16" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.99586588139999999" green="1" blue="0.99992710350000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmd-W4-8w2">
+                    <rect key="frame" x="336" y="410" width="8" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.99586588139999999" green="1" blue="0.99992710350000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBi-o3-OHn">
+                    <rect key="frame" x="15" y="451" width="345" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.99586588139999999" green="1" blue="0.99992710350000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="c9c9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1F-7j-y8g">
+                    <rect key="frame" x="15" y="410" width="301" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.99586588139999999" green="1" blue="0.99992710350000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="i1F-7j-y8g" firstAttribute="leading" secondItem="6FN-XZ-VWO" secondAttribute="leading" constant="15" id="FoS-v3-k7G"/>
+                <constraint firstItem="KBi-o3-OHn" firstAttribute="top" secondItem="i1F-7j-y8g" secondAttribute="bottom" constant="20" id="KtR-t3-ffo"/>
+                <constraint firstItem="UI2-tw-e4E" firstAttribute="top" secondItem="6FN-XZ-VWO" secondAttribute="top" constant="200" id="Nx3-xi-aER"/>
+                <constraint firstItem="UI2-tw-e4E" firstAttribute="leading" secondItem="6FN-XZ-VWO" secondAttribute="leading" id="P5T-NL-8Go"/>
+                <constraint firstItem="KBi-o3-OHn" firstAttribute="leading" secondItem="6FN-XZ-VWO" secondAttribute="leading" constant="15" id="TkL-9F-SBm"/>
+                <constraint firstItem="MI1-TK-kZl" firstAttribute="centerY" secondItem="gmd-W4-8w2" secondAttribute="centerY" id="W2L-Ai-bvc"/>
+                <constraint firstItem="MI1-TK-kZl" firstAttribute="top" secondItem="UI2-tw-e4E" secondAttribute="bottom" constant="10" id="b9C-ku-pqB"/>
+                <constraint firstItem="MI1-TK-kZl" firstAttribute="centerY" secondItem="i1F-7j-y8g" secondAttribute="centerY" id="bn9-rx-nNX"/>
+                <constraint firstAttribute="trailing" secondItem="KBi-o3-OHn" secondAttribute="trailing" constant="15" id="jVk-NS-bzu"/>
+                <constraint firstItem="MI1-TK-kZl" firstAttribute="leading" secondItem="gmd-W4-8w2" secondAttribute="trailing" id="m9T-Gg-xQ3"/>
+                <constraint firstItem="gmd-W4-8w2" firstAttribute="leading" secondItem="i1F-7j-y8g" secondAttribute="trailing" constant="20" id="nCc-7I-ZdZ"/>
+                <constraint firstAttribute="trailing" secondItem="MI1-TK-kZl" secondAttribute="trailing" constant="15" id="t6N-5I-Pt2"/>
+                <constraint firstAttribute="trailing" secondItem="UI2-tw-e4E" secondAttribute="trailing" id="tt5-sq-8UW"/>
+            </constraints>
+            <point key="canvasLocation" x="-85" y="-14"/>
+        </view>
+    </objects>
+</document>
