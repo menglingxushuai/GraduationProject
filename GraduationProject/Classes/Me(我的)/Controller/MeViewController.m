@@ -11,6 +11,7 @@
 #import "LoginOutCell.h"
 #import "BSLoginAndRegistViewController.h"
 #import "LocationDownloadViewController.h"
+#import "MyIssueVideoViewController.h"
 
 #if TARGET_IPHONE_SIMULATOR
 
@@ -68,7 +69,7 @@
 
 #pragma mark - tableView的代理
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -82,17 +83,13 @@
             
             if ([self.isLogin isEqualToString:@"Yes"]) {
                 cell.name.text = [BSUserInfo getDataWithKey:@"UserName"];
-                AVQuery *query = [AVQuery queryWithClassName:@"Product"];
-                [query includeKey:@"image"];
-                [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                    if (!error) {
-                        if (ArrayHave(objects)) {
-                            NSDictionary *dic = [objects lastObject];
-                            AVFile *file = dic[@"image"];
-                            [cell.img sd_setImageWithURL:[NSURL URLWithString:file.url ]placeholderImage:[UIImage imageNamed:@"占位图"]];
-                        }
-                    }
-                }];
+                AVUser *currentUser = [AVUser currentUser];
+                NSData *data = [currentUser objectForKey:@"headImage"];
+                if (data) {
+                    cell.img.image = [UIImage imageWithData:data];
+                } else {
+                    cell.img.image = [UIImage imageNamed:@"user_photo"];
+                }
             } else {
                 cell.name.text = @"未设置";
                 cell.img.image = [UIImage imageNamed:@"user_photo"];
@@ -110,11 +107,20 @@
         }
         case 2:{
             
+            cell.textLabel.text = @"校友发布";
+            cell.detailTextLabel.text = @"";
+            
+            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+            return cell;
+        }
+            
+        case 3:{
+            
             cell.textLabel.text = @"清除缓存";
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2fM", [ToolForRubbish getDiskSize]];
             return cell;
         }
-        case 3:{
+        case 4:{
             LoginOutCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OutCell" forIndexPath:indexPath];
             if ([NSString isBlankString:self.isLogin] == NO && [self.isLogin isEqualToString:@"Yes"]) {
                 [cell.loginOut setTitle:@"退出登录" forState:UIControlStateNormal];
@@ -136,7 +142,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         return 80;
-    } else if (indexPath.row == 3) {
+    } else if (indexPath.row == 4) {
         return 60;
     } else {
         return 40;
@@ -164,7 +170,13 @@
                 break;
             }
             case 2:{
+                MyIssueVideoViewController *vc = [MyIssueVideoViewController new];
+                [self.navigationController pushViewController:vc animated:YES];
+                break;
+            }
+            case 3:{
                 [self clearHc];
+
                 break;
             }
             default:
@@ -262,18 +274,12 @@
 
 - (void)saveImage:(UIImage *)image {
     NSData *sendData = UIImageJPEGRepresentation(image, 0.5f);
-    AVFile *file = [AVFile fileWithData:sendData];
-    AVObject *product = [AVObject objectWithClassName:@"Product"];
-    [product setObject:file forKey:@"image"];
-    [product saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            MAIN(^{
-                [self.tableView reloadData];
-            });
-        } else {
-            NSLog(@"保存新物品出错 %@", error);
-        }
+
+    [[AVUser currentUser] setObject:sendData forKeyedSubscript:@"headImage"];
+    [[AVUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"##########%@", error);
     }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

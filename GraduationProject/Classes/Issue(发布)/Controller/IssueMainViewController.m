@@ -7,7 +7,7 @@
 //
 
 #import "IssueMainViewController.h"
-
+#import "FMImagePicker.h"
 @interface IssueMainViewController ()
 @property (nonatomic, strong) UIView *whiteView;
 @property (nonatomic, strong) UIButton *button;
@@ -27,7 +27,6 @@
 
 
 - (void)initLayout {
-    
 }
 
 #pragma mark - 白色view
@@ -77,7 +76,10 @@
 
 - (void)issueBtnClick {
     DLog(@"我是发布");
+    FMImagePicker *picker = [[FMImagePicker alloc] init];
+    [self presentViewController:picker animated:YES completion:nil];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

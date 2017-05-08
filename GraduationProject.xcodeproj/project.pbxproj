@@ -82,6 +82,11 @@
 		3182BDD51EBC72E500F3D8AA /* TitleImgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3182BDD31EBC72E500F3D8AA /* TitleImgCell.xib */; };
 		3182BDD91EBC797F00F3D8AA /* LoginOutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3182BDD71EBC797F00F3D8AA /* LoginOutCell.m */; };
 		3182BDDA1EBC797F00F3D8AA /* LoginOutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3182BDD81EBC797F00F3D8AA /* LoginOutCell.xib */; };
+		31AA9FC51EC03B230057AB5F /* FMImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA9FC41EC03B230057AB5F /* FMImagePicker.m */; };
+		31AA9FC81EC04B380057AB5F /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA9FC71EC04B380057AB5F /* VideoModel.m */; };
+		31AA9FCB1EC04EAD0057AB5F /* MyIssueVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA9FCA1EC04EAD0057AB5F /* MyIssueVideoViewController.m */; };
+		31AA9FCF1EC057050057AB5F /* AlumniVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA9FCD1EC057050057AB5F /* AlumniVideoViewController.m */; };
+		31AA9FD01EC057050057AB5F /* AlumniVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31AA9FCE1EC057050057AB5F /* AlumniVideoViewController.xib */; };
 		31B0C7C91EBA257F00E083CB /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B0C7C81EBA257F00E083CB /* Foundation+Log.m */; };
 		31BEB19F1EB88E7100A0D214 /* SFTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BEB19B1EB88E7100A0D214 /* SFTag.m */; };
 		31BEB1A01EB88E7100A0D214 /* SFTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BEB19D1EB88E7100A0D214 /* SFTagButton.m */; };
@@ -231,6 +236,15 @@
 		3182BDD61EBC797F00F3D8AA /* LoginOutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginOutCell.h; sourceTree = "<group>"; };
 		3182BDD71EBC797F00F3D8AA /* LoginOutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginOutCell.m; sourceTree = "<group>"; };
 		3182BDD81EBC797F00F3D8AA /* LoginOutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginOutCell.xib; sourceTree = "<group>"; };
+		31AA9FC31EC03B230057AB5F /* FMImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMImagePicker.h; sourceTree = "<group>"; };
+		31AA9FC41EC03B230057AB5F /* FMImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMImagePicker.m; sourceTree = "<group>"; };
+		31AA9FC61EC04B380057AB5F /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
+		31AA9FC71EC04B380057AB5F /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
+		31AA9FC91EC04EAD0057AB5F /* MyIssueVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyIssueVideoViewController.h; sourceTree = "<group>"; };
+		31AA9FCA1EC04EAD0057AB5F /* MyIssueVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyIssueVideoViewController.m; sourceTree = "<group>"; };
+		31AA9FCC1EC057050057AB5F /* AlumniVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlumniVideoViewController.h; sourceTree = "<group>"; };
+		31AA9FCD1EC057050057AB5F /* AlumniVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlumniVideoViewController.m; sourceTree = "<group>"; };
+		31AA9FCE1EC057050057AB5F /* AlumniVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlumniVideoViewController.xib; sourceTree = "<group>"; };
 		31B0C7C81EBA257F00E083CB /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		31BEB19A1EB88E7100A0D214 /* SFTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTag.h; sourceTree = "<group>"; };
 		31BEB19B1EB88E7100A0D214 /* SFTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTag.m; sourceTree = "<group>"; };
@@ -577,6 +591,11 @@
 				314083041EB1EC76003F5BF3 /* MeViewController.m */,
 				3138E06F1EBDCB8100A2D9CA /* LocationDownloadViewController.h */,
 				3138E0701EBDCB8100A2D9CA /* LocationDownloadViewController.m */,
+				31AA9FC91EC04EAD0057AB5F /* MyIssueVideoViewController.h */,
+				31AA9FCA1EC04EAD0057AB5F /* MyIssueVideoViewController.m */,
+				31AA9FCC1EC057050057AB5F /* AlumniVideoViewController.h */,
+				31AA9FCD1EC057050057AB5F /* AlumniVideoViewController.m */,
+				31AA9FCE1EC057050057AB5F /* AlumniVideoViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -669,6 +688,8 @@
 		314082D81EB1D483003F5BF3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				31AA9FC61EC04B380057AB5F /* VideoModel.h */,
+				31AA9FC71EC04B380057AB5F /* VideoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -761,6 +782,8 @@
 		315B70011EBE14A500406B55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				31AA9FC31EC03B230057AB5F /* FMImagePicker.h */,
+				31AA9FC41EC03B230057AB5F /* FMImagePicker.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -924,6 +947,7 @@
 			files = (
 				312693D51EB828E000FE9889 /* ProgramCell.xib in Resources */,
 				31C903881EBD5AC600DC34D1 /* BSLoginAndRegistViewController.xib in Resources */,
+				31AA9FD01EC057050057AB5F /* AlumniVideoViewController.xib in Resources */,
 				315B70071EBE14CC00406B55 /* IssueMainViewController.xib in Resources */,
 				3178FF881EBAF7AE0004AFB9 /* NewsArticleCell.xib in Resources */,
 				31C9038D1EBD5E4E00DC34D1 /* BSLoginRegisterView.xib in Resources */,
@@ -1009,6 +1033,7 @@
 				314082FF1EB1EC58003F5BF3 /* EssayViewController.m in Sources */,
 				314082FC1EB1EC3F003F5BF3 /* VideoViewController.m in Sources */,
 				31BEB1A21EB8900900A0D214 /* SFTagView.m in Sources */,
+				31AA9FCF1EC057050057AB5F /* AlumniVideoViewController.m in Sources */,
 				31299AAC1EB334C600A1C757 /* FMProgrameModel.m in Sources */,
 				31299AA61EB332D000A1C757 /* Detail1SubViewController.m in Sources */,
 				3178FF871EBAF7AE0004AFB9 /* NewsArticleCell.m in Sources */,
@@ -1026,8 +1051,10 @@
 				3179EA441EBB0EEB00E1889C /* FirstCell.m in Sources */,
 				31299A891EB3022F00A1C757 /* FMViewController.m in Sources */,
 				31C903971EBD792200DC34D1 /* ToolForReguar.m in Sources */,
+				31AA9FC81EC04B380057AB5F /* VideoModel.m in Sources */,
 				3179EA4B1EBB154A00E1889C /* NewsImage.m in Sources */,
 				31299A8C1EB3027700A1C757 /* SubViewController.m in Sources */,
+				31AA9FCB1EC04EAD0057AB5F /* MyIssueVideoViewController.m in Sources */,
 				3138E0711EBDCB8100A2D9CA /* LocationDownloadViewController.m in Sources */,
 				31BEB1A01EB88E7100A0D214 /* SFTagButton.m in Sources */,
 				31299AA31EB32EC700A1C757 /* DetailSubViewController.m in Sources */,
@@ -1061,6 +1088,7 @@
 				314082F91EB1EAEC003F5BF3 /* BSTabBarViewController.m in Sources */,
 				312693DC1EB8509F00FE9889 /* CommentCell.m in Sources */,
 				314083051EB1EC76003F5BF3 /* MeViewController.m in Sources */,
+				31AA9FC51EC03B230057AB5F /* FMImagePicker.m in Sources */,
 				3179EA571EBB26BD00E1889C /* NewsPhotoSetCell.m in Sources */,
 				314082B71EB1D013003F5BF3 /* GraduationProject.xcdatamodeld in Sources */,
 				31BEB1A51EB8902500A0D214 /* DetailTagView.m in Sources */,

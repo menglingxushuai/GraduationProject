@@ -9,6 +9,7 @@
 #import "VideoViewController.h"
 #import "VideoMainCell.h"
 #import "VideoDetailController.h"
+#import "VideoModel.h"
 @interface VideoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableview;
 @property (nonatomic, strong) NSMutableArray *allArray;
@@ -48,7 +49,9 @@
     
     [self initLayout];
     
+    
 }
+
 
 - (void)initLayout {
     self.title = @"视频";
