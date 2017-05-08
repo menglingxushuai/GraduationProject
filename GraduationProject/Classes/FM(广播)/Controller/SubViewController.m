@@ -37,9 +37,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self initLayout];
-    [self setupRefesh];
+    [self loadDetailData];
+//    [self setupRefesh];
 }
 
 - (void)initLayout {

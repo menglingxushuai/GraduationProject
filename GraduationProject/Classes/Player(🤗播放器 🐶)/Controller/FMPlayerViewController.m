@@ -10,6 +10,8 @@
 #import "FMProgrameModel.h"
 #import "AVPlayerManager.h"
 #import "UIButton+touch.h"
+#import "BSLoginAndRegistViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 #define KAVPlayerManager [AVPlayerManager shareAVPlayerManager]
 
 @interface FMPlayerViewController ()<AVPlayerManagerDelegate, NSURLSessionDelegate,NSURLSessionDownloadDelegate,NSURLSessionTaskDelegate>
@@ -29,6 +31,7 @@
 @property (nonatomic,copy) NSString *dowcLoadStr;
 @property (nonatomic,copy) NSString *dowcLoadName;
 
+@property (nonatomic, strong) MPMediaItemArtwork *imgWork;
 @end
 
 @implementation FMPlayerViewController
@@ -38,11 +41,23 @@
     self.navigationController.navigationBar.translucent = YES;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+#warning 音乐后台播放 - 第二步（也可以写在Appdelegate启动中,然后在- (void)remoteControlReceivedWithEvent:(UIEvent *)event { 方法中监测 点击事件）
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     self.tabBarController.tabBar.hidden = NO;
     self.navigationController.navigationBar.translucent = NO;
+    
+#warning 音乐 - 释放
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    [self resignFirstResponder];
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
 }
 
 - (void)viewDidLoad {
@@ -65,12 +80,9 @@
 - (void)initLayout {
     
     KAVPlayerManager.delegate = self;
-    [KAVPlayerManager initialize];
     
     _playBtn.selected = NO;
     _bgImg.userInteractionEnabled = YES;
-    
-    
     
     // 毛玻璃
     UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
@@ -96,8 +108,7 @@
     [_bgImg sd_setImageWithURL:[NSURL URLWithString:model.albumPic] placeholderImage:[UIImage imageNamed:@"占位图"]];
     [_myImg sd_setImageWithURL:[NSURL URLWithString:model.albumPic] placeholderImage:[UIImage imageNamed:@"占位图"]];
     [_topImageView sd_setImageWithURL:[NSURL URLWithString:model.albumPic] placeholderImage:[UIImage imageNamed:@"占位图"]];
-    
-    
+    self.imgWork = [[MPMediaItemArtwork alloc] initWithImage:_bgImg.image];
 }
 
 #pragma mark - 播放 下一首 上一首 -
@@ -140,7 +151,14 @@
 #pragma mark - 下载 -
 - (IBAction)downLoadBtn:(id)sender {
     
-    [self downloadBackground];
+    NSString *isLogin = [BSUserInfo getDataWithKey:@"IsLogin"];
+    if ([isLogin isEqualToString:@"Yes"]) {
+        [MBProgressHUD showSuccess:@"视频正在下载"];
+        [self downloadBackground];
+    } else {
+        BSLoginAndRegistViewController *Vc = [BSLoginAndRegistViewController new];
+        [self presentViewController:Vc animated:YES completion:nil];
+    }
     
 }
 - (IBAction)changeValue:(UISlider *)sender {
@@ -162,6 +180,11 @@
     [KAVPlayerManager playWithUrl:model.mp3PlayUrl];
     self.dowcLoadStr = model.mp3PlayUrl;
     self.dowcLoadName = model.audioName;
+    
+    // 配置封面信息
+    MAIN(^{
+        [self configPlayingInfoWithModel:model];
+    });
 }
 
 
@@ -316,6 +339,50 @@
     [self copyFileAtPath:[location relativePath]];
     
     [self pushLocalNotification];
+}
+
+
+#warning 音乐后台播放 - 第三步监测点击事件
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    
+    if (event.type == UIEventTypeRemoteControl) {
+        switch (event.subtype) {
+                
+            case UIEventSubtypeRemoteControlPause:
+                DLog(@"暂停");
+                [self playBtn:_playBtn];
+                break;
+            case UIEventSubtypeRemoteControlPreviousTrack:
+                DLog(@"上一曲");
+                [self leftBtn:nil];
+                break;
+            case UIEventSubtypeRemoteControlNextTrack:
+                DLog(@"下一曲");
+                [self rightBtn:nil];
+                break;
+            case UIEventSubtypeRemoteControlPlay:
+                DLog(@"播放");
+                [self playBtn:_playBtn];
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+#warning 音乐后台播放 - 第四步锁屏封面  (引入系统框架MediaPlayer 然后在播放中的曲目信息改变时调用下面的方法：)
+- (void)configPlayingInfoWithModel:(FMProgrameModel *)model {
+    
+    if (NSClassFromString(@"MPNowPlayingInfoCenter")) {
+        NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+        [dict setObject:model.audioName forKey:MPMediaItemPropertyTitle];
+//        [dict setObject:@"曲目艺术家" forKey:MPMediaItemPropertyArtist];
+        
+        [dict setObject:_imgWork forKey:MPMediaItemPropertyArtwork];
+        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:nil];
+        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:dict];
+    }
+    
 }
 
 

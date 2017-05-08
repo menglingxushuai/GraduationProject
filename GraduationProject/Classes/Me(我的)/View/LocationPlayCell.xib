@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="77" id="KGk-i7-Jjw" customClass="LocationPlayCell">
+            <rect key="frame" x="0.0" y="0.0" width="368" height="77"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="368" height="76.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playLocation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVz-7h-OHc">
+                        <rect key="frame" x="10" y="10" width="56.5" height="56.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="ZVz-7h-OHc" secondAttribute="height" id="QHi-EA-v70"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAt-hx-QfM">
+                        <rect key="frame" x="76.5" y="28" width="281.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZVz-7h-OHc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="6cA-4L-l69"/>
+                    <constraint firstItem="mAt-hx-QfM" firstAttribute="leading" secondItem="ZVz-7h-OHc" secondAttribute="trailing" constant="10" id="CPI-8W-Hyr"/>
+                    <constraint firstAttribute="trailing" secondItem="mAt-hx-QfM" secondAttribute="trailing" constant="10" id="Wu4-66-UUy"/>
+                    <constraint firstItem="mAt-hx-QfM" firstAttribute="centerY" secondItem="ZVz-7h-OHc" secondAttribute="centerY" id="bkP-iq-mpl"/>
+                    <constraint firstAttribute="bottom" secondItem="ZVz-7h-OHc" secondAttribute="bottom" constant="10" id="cSC-y7-UhW"/>
+                    <constraint firstItem="ZVz-7h-OHc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="fNv-a4-aXT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="MyImg" destination="ZVz-7h-OHc" id="MNG-qy-i5I"/>
+                <outlet property="MyTitle" destination="mAt-hx-QfM" id="GaF-rw-ENw"/>
+            </connections>
+            <point key="canvasLocation" x="56" y="89.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="playLocation" width="200" height="200"/>
+    </resources>
+</document>

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AVOSCloud.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,17 +52,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>01CAEF54851A1C8AA3FFDC3140AC0DD2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>04CF549EBEEE7BC87AEAE35397184D94</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>451494C82A0807BD932F9F790F2EC5D1</key>
+		<key>28AFBC0E511B8F40FE4F8AB64E3F6F22</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,7 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>64441CCEE3CA7353ECA5B1B4925C01E3</key>
+		<key>746A2D54160728B53B87A9B4F1BCAEE1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7AA716F511E9871F17F7DC4F6F5F84E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -83,6 +88,11 @@
 			<true/>
 		</dict>
 		<key>A316B54C67E947D23CECD230FA5BFAEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E916CAC7EF5AF3582CA77DF5730EF31F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

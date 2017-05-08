@@ -6,4 +6,6 @@ pod 'Masonry'
 pod 'MBProgressHUD'
 pod 'MJRefresh'
 pod 'SMPageControl'
+# 数据存储、短信、云引擎调用等基础服务模块
+pod 'AVOSCloud'
 end

@@ -54,7 +54,7 @@
 // 点击广告界面调用
 - (void)tap
 {
-    // 跳转到界面 => safari
+    // 跳转到界面 => safari 
     NSURL *url = [NSURL URLWithString:@"http://www.cnblogs.com/menglingxu/"];
     UIApplication *app = [UIApplication sharedApplication];
     if ([app canOpenURL:url]) {

@@ -201,9 +201,7 @@ do {                                                                      \
 //G－C－D
 #define BACK(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
 #define MAIN(block) dispatch_async(dispatch_get_main_queue(),block)
-
-//NSUserDefaults 实例化
-#define USER_DEFAULT [NSUserDefaults standardUserDefaults]
+#define AFTER(block) dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(),block)
 
 
 //由角度获取弧度 有弧度获取角度

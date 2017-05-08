@@ -19,6 +19,10 @@
 #import "NSString+IsBlank.h"
 #import "Foundation+Log.m"
 #import "ToolForHeight.h"
+#import "ToolForReguar.h"
+#import "BSUserInfo.h"
+#import "UIButton+touch.h"
+#import "ToolForRubbish.h"
 // 第三方
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
@@ -31,5 +35,10 @@
 #import "BSRequestHandle.h"
 // 加载gif图
 #import "MBProgressHUD+GifHUD.h"
+
+// leanCloud
+#import <AVUser.h>
+#import <AVFile.h>
+#import <AVQuery.h>
 
 #endif /* ZhyBishe_pch */

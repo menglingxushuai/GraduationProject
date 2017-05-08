@@ -14,11 +14,8 @@
 #import "MeViewController.h"
 #import "UIImage+Image.h"
 #import "BSTabBar.h"
+#import "IssueMainViewController.h"
 @interface BSTabBarViewController ()<BSTabBarDelegate>
-@property (nonatomic, strong) UIView *whiteView;
-@property (nonatomic, strong) UIButton *button;
-@property (nonatomic, strong) UIImageView *myImg;
-@property (nonatomic, strong) UIButton *issueBtn;
 
 @end
 
@@ -52,9 +49,8 @@
     // 2 设置tabBar上按钮内容 -> 由对应的子控制器的tabBarItem属性
     [self setupAllTitleButton];
     // 3.自定义tabBar
-//    [self setupTabBar];
-    // 4.设置whiteView
-    [self setupWhiteView];
+    [self setupTabBar];
+    
 }
 
 #pragma mark - 自定义tabBar
@@ -129,64 +125,12 @@
 }
 
 
-#pragma mark - 白色view
-- (void)setupWhiteView {
-    self.whiteView = [[UIView alloc] init];
-    self.whiteView.backgroundColor = WhiteColor;
-    self.whiteView.frame = CGRectMake(0, 64, kWindowWidth, kWindowHeight);
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.width = 43;
-    button.height = 43;
-    button.centerX = kWindow.centerX;
-    button.y = kWindowHeight - 48;
-    [button setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(closeButton) forControlEvents:UIControlEventTouchUpInside];
-    self.button = button;
-    
-    self.myImg = [UIImageView new];
-    self.myImg.backgroundColor = [UIColor greenColor];
-    self.myImg.y = kWindow.height*0.5 - 50;
-    self.myImg.x = kWindow.width*0.5 + 50;
-    self.myImg.height = 100;
-    self.myImg.width = 100;
-    self.myImg.image = [UIImage imageNamed:@"路飞"];
-    
-    self.issueBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.issueBtn setTitle:@"发布视频吧" forState:UIControlStateNormal];
-    self.issueBtn.width = 25;
-    self.issueBtn.height = 110;
-    self.issueBtn.y = kWindow.height*0.5 - 55;
-    self.issueBtn.titleLabel.numberOfLines=0;
-    self.issueBtn.x = kWindow.width*0.5 - 25;
-    self.issueBtn.layer.cornerRadius = 5;
-    self.issueBtn.backgroundColor = MainColor;
-    [self.issueBtn addTarget:self action:@selector(issueBtnClick) forControlEvents:UIControlEventTouchUpInside];
-}
 
 - (void)tabBarClickPlusButton:(BSTabBar *)tabBar {
-    __weak typeof(self)mySelf = self;
-    [UIView animateWithDuration:2 delay:0.1 usingSpringWithDamping:0.08 initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        mySelf.myImg.y = kWindow.height*0.5 - 50;
-        mySelf.myImg.x = kWindow.width*0.5;
-        mySelf.myImg.height = 100;
-        mySelf.myImg.width = 100;
-    } completion:^(BOOL finished) {
-        
-    }];
-    [kWindow addSubview:self.whiteView];
-    [kWindow addSubview:self.button];
-    [kWindow addSubview:self.myImg];
-    [kWindow addSubview:self.issueBtn];
+    IssueMainViewController *Vc = [IssueMainViewController new];
+    [Vc setModalTransitionStyle:UIModalTransitionStylePartialCurl];
+    [self presentViewController:Vc animated:YES completion:nil];
 }
 
-- (void)closeButton {
-    [self.whiteView removeFromSuperview];
-    [self.button removeFromSuperview];
-    [self.myImg removeFromSuperview];
-    [self.issueBtn removeFromSuperview];
-}
 
-- (void)issueBtnClick {
-    DLog(@"我是发布");
-}
 @end

@@ -7,6 +7,8 @@
 
 #import "AppDelegate.h"
 #import "BSAdViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
+#import "AVPlayerManager.h"
 @interface AppDelegate ()
 
 @end
@@ -27,50 +29,27 @@
     // 3.显示窗口 1.成为UIApplication主窗口 2.
     [self.window makeKeyAndVisible];
     
+#pragma mark - LeanCloud
+    [AVOSCloud setApplicationId:@"99uOCTznkCgwovkIi7BEjg6X-gzGzoHsz" clientKey:@"6RNkcvMY5QP6AVxMIc5g9rHI"];
     
-    
+#warning 音乐后台播放 - 第1步
+    [[AVPlayerManager shareAVPlayerManager] initialize];
     return YES;
 }
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     
 }
 
-#warning - 允许音乐后台播放 -
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    //允许后台播放音乐
-    [application beginBackgroundTaskWithExpirationHandler:nil];
 }
 
 
 - (void)remoteControlReceivedWithEvent:(UIEvent *)event {
-    if(event.type==UIEventTypeRemoteControl)
-    {
-        NSInteger order=-1;
-        switch (event.subtype) {
-            case UIEventSubtypeRemoteControlPause:
-                order=UIEventSubtypeRemoteControlPause;
-                break;
-            case UIEventSubtypeRemoteControlPlay:
-                order=UIEventSubtypeRemoteControlPlay;
-                break;
-            case UIEventSubtypeRemoteControlNextTrack:
-                order=UIEventSubtypeRemoteControlNextTrack;
-                break;
-            case UIEventSubtypeRemoteControlPreviousTrack:
-                order=UIEventSubtypeRemoteControlPreviousTrack;
-                break;
-            case UIEventSubtypeRemoteControlTogglePlayPause:
-                order=UIEventSubtypeRemoteControlTogglePlayPause;
-                break;
-            default:
-                order=-1;
-                break;
-        }
-        NSDictionary *orderDict = @{@"order":@(order)};
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"AppDidReceiveRemoteControlNotification" object:nil userInfo:orderDict];
-    }
+    
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
