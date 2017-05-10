@@ -88,7 +88,7 @@
     UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
     effectView.alpha = 0.8;
-    effectView.frame = _bgImg.frame;
+    effectView.frame = [UIScreen mainScreen].bounds;
     
     [ _bgImg addSubview:effectView];
     
@@ -275,15 +275,8 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
     NSString *documentDirectory = [paths objectAtIndex:0];
-    
-    
-    DLog(@"document=%@",documentDirectory);
-    
   
-    
     NSString *toPath = [documentDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.mp3", self.dowcLoadName]];
-    
-    
     
     if (![fileManager fileExistsAtPath:toPath]) {
         
@@ -349,19 +342,15 @@
         switch (event.subtype) {
                 
             case UIEventSubtypeRemoteControlPause:
-                DLog(@"暂停");
                 [self playBtn:_playBtn];
                 break;
             case UIEventSubtypeRemoteControlPreviousTrack:
-                DLog(@"上一曲");
                 [self leftBtn:nil];
                 break;
             case UIEventSubtypeRemoteControlNextTrack:
-                DLog(@"下一曲");
                 [self rightBtn:nil];
                 break;
             case UIEventSubtypeRemoteControlPlay:
-                DLog(@"播放");
                 [self playBtn:_playBtn];
                 break;
             default:

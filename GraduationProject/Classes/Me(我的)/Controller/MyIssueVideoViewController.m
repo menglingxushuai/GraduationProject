@@ -55,16 +55,13 @@
 
 - (void)getMyData {
     AVQuery *query = [AVQuery queryWithClassName:@"_File"];
-    DLog(@"%@", query);
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             if (ArrayHave(objects)) {
                 self.allArray = objects.mutableCopy;
+                [self.tableview reloadData];
             }
         }
-        MAIN(^{
-            [self.tableview reloadData];
-        });
     }];
 }
 
@@ -84,14 +81,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LocationPlayCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LPCell" forIndexPath:indexPath];
     NSDictionary *dic = self.allArray[indexPath.row];
-    DLog(@"%@", dic);
     cell.MyTitle.text =  dic[@"name"];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *dic = self.allArray[indexPath.row];
-    DLog(@"%@", dic[@"url"]);    
     AlumniVideoViewController *Vc = [AlumniVideoViewController new];
     Vc.videoStr = dic[@"url"];
     [self.navigationController pushViewController:Vc animated:YES];

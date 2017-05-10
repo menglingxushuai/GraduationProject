@@ -54,6 +54,7 @@
                 <constraint firstItem="JYV-xg-KIt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="l6D-OD-SZ7"/>
                 <constraint firstItem="JYV-xg-KIt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vtS-vA-JZe"/>
             </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
         </view>
     </objects>
     <resources>

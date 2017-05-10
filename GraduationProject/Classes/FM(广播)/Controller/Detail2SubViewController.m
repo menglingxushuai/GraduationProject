@@ -57,11 +57,10 @@
             [model setValuesForKeysWithDictionary:resultDic];
             weakSelf.model = model;
         }
-        MAIN(^{
+        
             [self.tableview.mj_footer endRefreshing];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self.tableview reloadData];
-        });
         
     } failed:^(id error) {
         

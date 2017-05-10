@@ -17,7 +17,6 @@ singletion_implementation(BSRequestHandle);
     static AFHTTPSessionManager *manager = nil;
     static dispatch_once_t  onceToken ;
     dispatch_once(&onceToken, ^{
-        
         manager = [AFHTTPSessionManager manager];
         manager.requestSerializer = [AFHTTPRequestSerializer serializer];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];

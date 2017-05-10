@@ -105,7 +105,6 @@
     NSString *nameVideo = [NSString stringWithFormat:@"%@.MP4", dateTime];
     AVFile *file = [AVFile fileWithName:nameVideo data:videoData];
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        DLog(@"%@", file.url);//返回一个唯一的 Url 地址
         MAIN(^{
             [MBProgressHUD showSuccess:@"发布完成"];
         });

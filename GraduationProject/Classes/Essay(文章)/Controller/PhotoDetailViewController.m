@@ -54,9 +54,9 @@
                     [weakSelf.news.photos addObject:newsImage];
                 }
             }
-            MAIN(^{
-                [self setContent];
-            });
+            
+            [self setContent];
+            
         } failed:^(id error) {
             
         }];

@@ -97,10 +97,9 @@ static int page = 0;
             }
         }
         
-        MAIN(^{
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [self.tableview reloadData];
-        });
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self.tableview reloadData];
+        
     } failed:^(id error) {
         
     }];

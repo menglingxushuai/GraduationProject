@@ -82,11 +82,9 @@
             }
         }
         
-        MAIN(^{
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [self.tableview.mj_header endRefreshing];
-            [self.tableview reloadData];
-        });
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self.tableview.mj_header endRefreshing];
+        [self.tableview reloadData];
         
     } failed:^(id error) {
         

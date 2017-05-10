@@ -82,9 +82,9 @@ typedef NS_ENUM(NSUInteger, NewsType) {
                 [weakSelf.allArray addObject:news];
             }
         }
-        MAIN(^{
-            [weakSelf.tableview reloadData];
-        });
+        
+        [weakSelf.tableview reloadData];
+        
     } failed:^(id error) {
         
     }];
@@ -131,7 +131,6 @@ typedef NS_ENUM(NSUInteger, NewsType) {
             return cell;
         }
         case NewsTypeUnknow:{
-            DLog(@"没有");
             break;
         }
     }

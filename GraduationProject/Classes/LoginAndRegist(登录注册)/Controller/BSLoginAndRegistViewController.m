@@ -123,9 +123,7 @@
                     });
                 }
             } else {
-                
-                [BSUserInfo saveDataWithKey:@"IsLogin" forData:@"Yes"];
-                [BSUserInfo saveDataWithKey:@"UserName" forData:username];
+                        [BSUserInfo saveDataWithKey:@"UserName" forData:username];
                 [self closeBtn:nil];
             }
         }];
@@ -144,7 +142,6 @@
     } else if (emailOk == NO) {
         [MBProgressHUD showSuccess:@"请输入正确的邮箱"];
     } else if (phoneOk == YES && passwordOk == YES && emailOk == YES) {
-        DLog(@"注册");
         AVUser *user = [AVUser user];
         user.username = _registView.registPhone.text;
         user.password = _registView.registPassword.text;
@@ -162,7 +159,6 @@
                 });
                 
             } else {
-                NSLog(@"注册失败 %@", error);
                 if (error.code == 203) {
                     MAIN(^{
                         [MBProgressHUD showSuccess:@"邮箱已被占用"];

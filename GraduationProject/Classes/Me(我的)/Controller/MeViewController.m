@@ -45,9 +45,15 @@
 
 #pragma mark - 判断状态:是否登录
 - (void)statusResult {
-    NSString *isLogin = [BSUserInfo getDataWithKey:@"IsLogin"];
-    self.isLogin = isLogin;
-    [self.tableView reloadData];
+    AVUser *currentUser = [AVUser currentUser];
+    if (currentUser) {
+        self.isLogin = @"Yes";
+        [self.tableView reloadData];
+    } else {
+        self.isLogin = @"NO";
+        [self.tableView reloadData];
+    }
+    
 }
 
 #pragma mark - 初始化布局
@@ -157,7 +163,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([NSString isBlankString:self.isLogin] == NO && [self.isLogin isEqualToString:@"Yes"]) {
-        DLog(@"该干啥干啥");
         switch (indexPath.row) {
             case 0:{
                 UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"相册", @"拍照", nil];
@@ -211,7 +216,6 @@
         [self goToLogin];
     } else {
         [AVUser logOut];
-        [BSUserInfo saveDataWithKey:@"IsLogin" forData:@"NO"];
         [self statusResult];
     }
 }

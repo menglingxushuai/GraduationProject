@@ -53,14 +53,10 @@
 
 - (void)setupRefesh {
     
-    self.tableview.mj_footer =[MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableview.mj_footer =[MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadCommentData)];
     
 }
 
-- (void)loadNewData {
-    self.number++;
-    [self loadCommentData];
-}
 
 - (void)loadCommentData {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@%@%ld%@", FM_Comment_BaseUrl, self.ID, FM_Comment_AppendNumUrl, self.number, FM_Comment_Last];
@@ -79,14 +75,15 @@
                 
             }
         }
-        MAIN(^{
+        
+            self.number++;
             [self.tableview.mj_footer endRefreshing];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             [self.tableview reloadData];
-        });
-
-    } failed:^(id error) {
         
+    } failed:^(id error) {
+        [self.tableview.mj_footer endRefreshing];
+
     }];
     
 }

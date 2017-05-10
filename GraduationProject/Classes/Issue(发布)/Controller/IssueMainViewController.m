@@ -18,6 +18,57 @@
 
 @implementation IssueMainViewController
 
+- (UIView *)whiteView {
+    if (!_whiteView) {
+        _whiteView = [[UIView alloc] init];
+        _whiteView.backgroundColor = WhiteColor;
+        _whiteView.frame = CGRectMake(0, 64, kWindowWidth, kWindowHeight);
+    }
+    return _whiteView;
+}
+
+- (UIButton *)button {
+    if (!_button) {
+        _button = [UIButton buttonWithType:UIButtonTypeCustom];
+        _button.width = 43;
+        _button.height = 43;
+        _button.centerX = kWindow.centerX;
+        _button.y = kWindowHeight - 48;
+        [_button setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+        [_button addTarget:self action:@selector(closeButton) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _button;
+}
+
+- (UIImageView *)myImg {
+    if (!_myImg) {
+        _myImg = [UIImageView new];
+        _myImg.backgroundColor = [UIColor greenColor];
+        _myImg.y = kWindow.height*0.5 - 50;
+        _myImg.x = kWindow.width*0.5;
+        _myImg.height = 100;
+        _myImg.width = 100;
+        _myImg.image = [UIImage imageNamed:@"路飞"];
+    }
+    return _myImg;
+}
+
+- (UIButton *)issueBtn {
+    if (!_issueBtn) {
+        _issueBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_issueBtn setTitle:@"发布视频吧" forState:UIControlStateNormal];
+        _issueBtn.width = 25;
+        _issueBtn.height = 110;
+        _issueBtn.y = kWindow.height*0.5 - 55;
+        _issueBtn.titleLabel.numberOfLines=0;
+        _issueBtn.x = kWindow.width*0.5 - 25;
+        _issueBtn.layer.cornerRadius = 5;
+        _issueBtn.backgroundColor = MainColor;
+        [_issueBtn addTarget:self action:@selector(issueBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _issueBtn;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initLayout];
@@ -31,43 +82,12 @@
 
 #pragma mark - 白色view
 - (void)setupWhiteView {
-    self.whiteView = [[UIView alloc] init];
-    self.whiteView.backgroundColor = WhiteColor;
-    self.whiteView.frame = CGRectMake(0, 64, kWindowWidth, kWindowHeight);
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.width = 43;
-    button.height = 43;
-    button.centerX = kWindow.centerX;
-    button.y = kWindowHeight - 48;
-    [button setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(closeButton) forControlEvents:UIControlEventTouchUpInside];
-    self.button = button;
-    
-    self.myImg = [UIImageView new];
-    self.myImg.backgroundColor = [UIColor greenColor];
-    self.myImg.y = kWindow.height*0.5 - 50;
-    self.myImg.x = kWindow.width*0.5;
-    self.myImg.height = 100;
-    self.myImg.width = 100;
-    self.myImg.image = [UIImage imageNamed:@"路飞"];
-    
-    self.issueBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.issueBtn setTitle:@"发布视频吧" forState:UIControlStateNormal];
-    self.issueBtn.width = 25;
-    self.issueBtn.height = 110;
-    self.issueBtn.y = kWindow.height*0.5 - 55;
-    self.issueBtn.titleLabel.numberOfLines=0;
-    self.issueBtn.x = kWindow.width*0.5 - 25;
-    self.issueBtn.layer.cornerRadius = 5;
-    self.issueBtn.backgroundColor = MainColor;
-    [self.issueBtn addTarget:self action:@selector(issueBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    
     
     [self.view addSubview:self.whiteView];
     [self.view addSubview:self.button];
     [self.view addSubview:self.myImg];
     [self.view addSubview:self.issueBtn];
-
+    
 }
 
 - (void)closeButton {
@@ -75,7 +95,6 @@
 }
 
 - (void)issueBtnClick {
-    DLog(@"我是发布");
     FMImagePicker *picker = [[FMImagePicker alloc] init];
     [self presentViewController:picker animated:YES completion:nil];
 }

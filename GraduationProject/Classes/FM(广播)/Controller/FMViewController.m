@@ -68,14 +68,11 @@
                     [weakSelf.allArray addObject:model];
                     [weakSelf.allTitleArray addObject:model.categoryName];
                 }
-                
-                // 设置导航条
-                MAIN(^{
-                    [MBProgressHUD hideHUDForView:self.view animated:YES];
-                    [self setMenuController];
-                });
             }
         }
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self setMenuController];
         
     } failed:^(id error) {
         

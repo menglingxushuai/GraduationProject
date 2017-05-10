@@ -54,15 +54,11 @@
 
 - (void)setupRefesh {
     
-    self.tableview.mj_footer =[MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableview.mj_footer =[MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadProgrameData)];
     
 }
 
-- (void)loadNewData {
-    self.number++;
-    [self loadProgrameData];
-    [self.tableview.mj_footer endRefreshing];
-}
+
 
 - (void)loadProgrameData {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@%@%ld%@", FM_Programe_BaseUrl, self.ID, FM_Programe_AppendNumUrl, self.number, FM_Programe_Last];
@@ -81,12 +77,14 @@
                 
             }
         }
-        MAIN(^{
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            [self.tableview reloadData];
-        });
-    } failed:^(id error) {
         
+        self.number++;
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self.tableview.mj_footer endRefreshing];
+        [self.tableview reloadData];
+        
+    } failed:^(id error) {
+        [self.tableview.mj_footer endRefreshing];
     }];
      
 }
