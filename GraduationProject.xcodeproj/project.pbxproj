@@ -85,7 +85,6 @@
 		31AA9FC81EC04B380057AB5F /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA9FC71EC04B380057AB5F /* VideoModel.m */; };
 		31AA9FCB1EC04EAD0057AB5F /* MyIssueVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA9FCA1EC04EAD0057AB5F /* MyIssueVideoViewController.m */; };
 		31AA9FCF1EC057050057AB5F /* AlumniVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA9FCD1EC057050057AB5F /* AlumniVideoViewController.m */; };
-		31AA9FD01EC057050057AB5F /* AlumniVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31AA9FCE1EC057050057AB5F /* AlumniVideoViewController.xib */; };
 		31B0C7C91EBA257F00E083CB /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B0C7C81EBA257F00E083CB /* Foundation+Log.m */; };
 		31BEB19F1EB88E7100A0D214 /* SFTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BEB19B1EB88E7100A0D214 /* SFTag.m */; };
 		31BEB1A01EB88E7100A0D214 /* SFTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BEB19D1EB88E7100A0D214 /* SFTagButton.m */; };
@@ -242,7 +241,6 @@
 		31AA9FCA1EC04EAD0057AB5F /* MyIssueVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyIssueVideoViewController.m; sourceTree = "<group>"; };
 		31AA9FCC1EC057050057AB5F /* AlumniVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlumniVideoViewController.h; sourceTree = "<group>"; };
 		31AA9FCD1EC057050057AB5F /* AlumniVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlumniVideoViewController.m; sourceTree = "<group>"; };
-		31AA9FCE1EC057050057AB5F /* AlumniVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlumniVideoViewController.xib; sourceTree = "<group>"; };
 		31B0C7C81EBA257F00E083CB /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		31BEB19A1EB88E7100A0D214 /* SFTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTag.h; sourceTree = "<group>"; };
 		31BEB19B1EB88E7100A0D214 /* SFTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTag.m; sourceTree = "<group>"; };
@@ -595,7 +593,6 @@
 				31AA9FCA1EC04EAD0057AB5F /* MyIssueVideoViewController.m */,
 				31AA9FCC1EC057050057AB5F /* AlumniVideoViewController.h */,
 				31AA9FCD1EC057050057AB5F /* AlumniVideoViewController.m */,
-				31AA9FCE1EC057050057AB5F /* AlumniVideoViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -947,7 +944,6 @@
 			files = (
 				312693D51EB828E000FE9889 /* ProgramCell.xib in Resources */,
 				31C903881EBD5AC600DC34D1 /* BSLoginAndRegistViewController.xib in Resources */,
-				31AA9FD01EC057050057AB5F /* AlumniVideoViewController.xib in Resources */,
 				315B70071EBE14CC00406B55 /* IssueMainViewController.xib in Resources */,
 				3178FF881EBAF7AE0004AFB9 /* NewsArticleCell.xib in Resources */,
 				31C9038D1EBD5E4E00DC34D1 /* BSLoginRegisterView.xib in Resources */,

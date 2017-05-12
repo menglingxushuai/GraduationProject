@@ -7,75 +7,58 @@
 //
 
 #import "AlumniVideoViewController.h"
-#import <AVFoundation/AVFoundation.h>
-#import <AVKit/AVKit.h>
-@interface AlumniVideoViewController ()
-/// 控制视频播放的控件
-/// 声明播放视频控件的属性[既可以播放视频也可以播放音频]
-@property (nonatomic, strong)AVPlayer *player;
-/// 播放的总时长
-@property (nonatomic, assign)CGFloat sumPlayOperation;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topOfPlayBtn;
+#import "ZFPlayer.h"
+
+@interface AlumniVideoViewController ()<ZFPlayerDelegate>
+
+@property (nonatomic, strong)ZFPlayerView *playerView;
+
 
 @end
 
 @implementation AlumniVideoViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // 设置播放的url
-    NSURL *url = [NSURL URLWithString:self.videoStr];
+   
     
-    // 设置的播放的项目
-    AVPlayerItem *item = [[AVPlayerItem alloc] initWithURL:url];
-    // 初始化player对象
-    self.player = [[AVPlayer alloc] initWithPlayerItem:item];
-    // 设置播放页面
-    AVPlayerLayer *layer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-    // 设置播放页面的大小
-    layer.frame = CGRectMake(0, 84, kWindowWidth, kWindowHeight*0.6);
-    // 设置背景颜色
-//    layer.backgroundColor = [UIColor cyanColor].CGColor;
-    // 设置播放窗口和当前视图之间的比例显示内容
-    layer.videoGravity = AVLayerVideoGravityResizeAspect;
-    // 添加播放视图到self.view上
-    [self.view.layer addSublayer:layer];
-    // 设置播放进度的默认值
-    // 设置播放的默认音量
-    self.player.volume = 1.0f;
+    [self initLayout];
 
 }
 
-
-#pragma mark - 开始播放按钮的响应方法
-- (IBAction)playBtn:(UIButton *)sender {
-    [self.player play];
+- (void)initLayout {
+    self.view.backgroundColor = [UIColor blackColor];
+    self.title = @"now playing";
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithimage:@"navigationButtonReturn-1" highImage:nil target:self action:@selector(back)];
+    
+    // 设置播放器
+    self.playerView = [[ZFPlayerView alloc] init];
+    [self.view addSubview:self.playerView];
+    [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(20);
+        make.left.right.equalTo(self.view);
+        // Here a 16:9 aspect ratio, can customize the video aspect ratio
+        make.height.equalTo(self.playerView.mas_width).multipliedBy(9.0f/16.0f);
+    }];
+    
+    
+    // view
+    ZFPlayerControlView *controlView = [[ZFPlayerControlView alloc] init];
+    // model
+    ZFPlayerModel *playerModel = [[ZFPlayerModel alloc] init];
+    playerModel.fatherView = self.view;
+    playerModel.videoURL = [NSURL URLWithString:self.videoStr];
+    playerModel.placeholderImage = [UIImage imageNamed: @"zhySb"];
+    playerModel.title = self.videoName;
+    [self.playerView playerControlView:controlView playerModel:playerModel];
+    // delegate
+    self.playerView.delegate = self;
+    // auto play the video
+    [self.playerView autoPlayTheVideo];
 }
 
-#pragma mark - 暂停播放按钮的响应方法
-- (IBAction)pauseBtn:(id)sender {
-    [self.player pause];
+- (void)back {
+    [self.navigationController popViewControllerAnimated:YES];
 }
-
-
-#pragma mark - 更新约束
-- (void)updateViewConstraints {
-    [super updateViewConstraints];
-    _topOfPlayBtn.constant = kWindowHeight *0.6 + 84 + 20;
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

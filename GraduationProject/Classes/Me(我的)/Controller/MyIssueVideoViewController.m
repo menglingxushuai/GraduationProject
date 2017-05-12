@@ -89,6 +89,8 @@
     NSDictionary *dic = self.allArray[indexPath.row];
     AlumniVideoViewController *Vc = [AlumniVideoViewController new];
     Vc.videoStr = dic[@"url"];
+    Vc.videoName = dic[@"name"];
+    Vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:Vc animated:YES];
 }
 

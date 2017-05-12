@@ -11,5 +11,7 @@
 @interface AlumniVideoViewController : UIViewController
 
 @property (nonatomic, strong) NSString *videoStr;
+@property (nonatomic, strong) NSString *videoName;
+
 
 @end
