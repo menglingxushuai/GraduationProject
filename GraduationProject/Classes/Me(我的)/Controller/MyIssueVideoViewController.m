@@ -2,7 +2,7 @@
 //  MyIssueVideoViewController.m
 //  GraduationProject
 //
-//  Created by 孟玲旭 on 2017/5/8.
+//  Created by 郑淮予 on 2017/5/8.
 //  Copyright © 2017年 郑淮予. All rights reserved.
 //
 
@@ -38,7 +38,7 @@
 
 - (void)initLayout {
     
-    self.title = @"校友发布";
+    self.title = @"视频";
     self.view.backgroundColor = WhiteColor;
     self.tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kWindowWidth, kWindowHeight) style:UITableViewStyleGrouped];
     self.tableview.delegate = self;
@@ -82,6 +82,7 @@
     LocationPlayCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LPCell" forIndexPath:indexPath];
     NSDictionary *dic = self.allArray[indexPath.row];
     cell.MyTitle.text =  dic[@"name"];
+    cell.MyImg.image = [UIImage imageNamed:@"占位图"];
     return cell;
 }
 

@@ -2,7 +2,7 @@
 //  FMPlayerViewController.m
 //  GraduationProject
 //
-//  Created by 孟玲旭 on 2017/5/3.
+//  Created by 郑淮予 on 2017/5/3.
 //  Copyright © 2017年 郑淮予. All rights reserved.
 //
 
@@ -151,8 +151,9 @@
 #pragma mark - 下载 -
 - (IBAction)downLoadBtn:(id)sender {
     
-    NSString *isLogin = [BSUserInfo getDataWithKey:@"IsLogin"];
-    if ([isLogin isEqualToString:@"Yes"]) {
+    AVUser *currentUser = [AVUser currentUser];
+
+    if (currentUser) {
         [MBProgressHUD showSuccess:@"视频正在下载"];
         [self downloadBackground];
     } else {
@@ -161,6 +162,7 @@
     }
     
 }
+
 - (IBAction)changeValue:(UISlider *)sender {
     
     [KAVPlayerManager seekToTime:_mySlider.value];

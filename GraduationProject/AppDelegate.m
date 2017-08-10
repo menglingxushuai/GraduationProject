@@ -34,6 +34,7 @@
     
 #warning 音乐后台播放 - 第1步
     [[AVPlayerManager shareAVPlayerManager] initialize];
+    
     return YES;
 }
 

@@ -2,17 +2,19 @@
 //  IssueMainViewController.m
 //  GraduationProject
 //
-//  Created by 孟玲旭 on 2017/5/6.
+//  Created by 郑淮予 on 2017/5/6.
 //  Copyright © 2017年 郑淮予. All rights reserved.
 //
 
 #import "IssueMainViewController.h"
-#import "FMImagePicker.h"
+#import "BSImagePicker.h"
+#import "BSIssueEssayViewController.h"
 @interface IssueMainViewController ()
 @property (nonatomic, strong) UIView *whiteView;
 @property (nonatomic, strong) UIButton *button;
 @property (nonatomic, strong) UIImageView *myImg;
 @property (nonatomic, strong) UIButton *issueBtn;
+@property (nonatomic, strong) UIButton *issueEditor;
 
 @end
 
@@ -69,6 +71,21 @@
     return _issueBtn;
 }
 
+- (UIButton *)issueEditor {
+    if (!_issueEditor) {
+        _issueEditor = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_issueEditor setTitle:@"发布文章吧" forState:UIControlStateNormal];
+        _issueEditor.width = 25;
+        _issueEditor.height = 110;
+        _issueEditor.y = kWindow.height*0.5 - 55;
+        _issueEditor.titleLabel.numberOfLines=0;
+        _issueEditor.x = kWindow.width*0.5 - 60;
+        _issueEditor.layer.cornerRadius = 5;
+        _issueEditor.backgroundColor = MainColor;
+        [_issueEditor addTarget:self action:@selector(issueEditorBtn) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _issueEditor;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initLayout];
@@ -87,7 +104,7 @@
     [self.view addSubview:self.button];
     [self.view addSubview:self.myImg];
     [self.view addSubview:self.issueBtn];
-    
+    [self.view addSubview:self.issueEditor];
 }
 
 - (void)closeButton {
@@ -95,11 +112,14 @@
 }
 
 - (void)issueBtnClick {
-    FMImagePicker *picker = [[FMImagePicker alloc] init];
+    BSImagePicker *picker = [[BSImagePicker alloc] init];
     [self presentViewController:picker animated:YES completion:nil];
 }
 
-
+// 跳转发布文章界面
+- (void)issueEditorBtn {
+    [self presentViewController:[BSIssueEssayViewController new] animated:YES completion:nil];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

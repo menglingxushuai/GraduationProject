@@ -2,8 +2,8 @@
 //  AVPlayerManager.m
 //  MonkeyFM
 //
-//  Created by lanou3g on 16/7/4.
-//  Copyright © 2016年 FGProject. All rights reserved.
+//  Created by 孟令旭 on 16/7/4.
+//  Copyright © 2016年 孟令旭. All rights reserved.
 //
 
 #import "AVPlayerManager.h"

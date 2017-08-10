@@ -2,7 +2,7 @@
 //  FMPlayerViewController.h
 //  GraduationProject
 //
-//  Created by 孟玲旭 on 2017/5/3.
+//  Created by 郑淮予 on 2017/5/3.
 //  Copyright © 2017年 郑淮予. All rights reserved.
 //
 

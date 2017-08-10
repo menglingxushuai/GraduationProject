@@ -2,7 +2,7 @@
 //  AlumniVideoViewController.m
 //  GraduationProject
 //
-//  Created by 孟玲旭 on 2017/5/8.
+//  Created by 郑淮予 on 2017/5/8.
 //  Copyright © 2017年 郑淮予. All rights reserved.
 //
 
@@ -36,7 +36,7 @@
     self.playerView = [[ZFPlayerView alloc] init];
     [self.view addSubview:self.playerView];
     [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(20);
+        make.top.equalTo(self.view).offset(0);
         make.left.right.equalTo(self.view);
         // Here a 16:9 aspect ratio, can customize the video aspect ratio
         make.height.equalTo(self.playerView.mas_width).multipliedBy(9.0f/16.0f);
@@ -49,7 +49,7 @@
     ZFPlayerModel *playerModel = [[ZFPlayerModel alloc] init];
     playerModel.fatherView = self.view;
     playerModel.videoURL = [NSURL URLWithString:self.videoStr];
-    playerModel.placeholderImage = [UIImage imageNamed: @"zhySb"];
+    playerModel.placeholderImage = [UIImage imageNamed: @"路飞"];
     playerModel.title = self.videoName;
     [self.playerView playerControlView:controlView playerModel:playerModel];
     // delegate
@@ -61,4 +61,6 @@
 - (void)back {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
 @end

@@ -2,7 +2,7 @@
 //  ZhyBishe.pch
 //  GraduationProject
 //
-//  Created by 孟玲旭 on 2017/4/27.
+//  Created by 郑淮予 on 2017/4/27.
 //  Copyright © 2017年 郑淮予. All rights reserved.
 //
 
@@ -40,5 +40,21 @@
 #import <AVUser.h>
 #import <AVFile.h>
 #import <AVQuery.h>
+
+// 阿里云
+#import <AliyunOSSiOS/OSSService.h>
+
+// 判断真机还是模拟器
+#if TARGET_IPHONE_SIMULATOR
+
+#define SIMULATOR 1
+
+#elif TARGET_OS_IPHONE
+
+#define SIMULATOR 0
+
+#endif
+
+
 
 #endif /* ZhyBishe_pch */

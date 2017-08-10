@@ -16,8 +16,6 @@
 // keyWindow
 #define kWindow [UIApplication sharedApplication].keyWindow
 
-
-
 //-------------------打印日志-------------------------
 //DEBUG  模式下打印日志,当前行
 #ifdef DEBUG
@@ -125,15 +123,6 @@ do {                                                                      \
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 #define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
-
-//判断是真机还是模拟器
-#if TARGET_OS_IPHONE
-//iPhone Device
-#endif
-
-#if TARGET_IPHONE_SIMULATOR
-//iPhone Simulator
-#endif
 
 //检查系统版本
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)

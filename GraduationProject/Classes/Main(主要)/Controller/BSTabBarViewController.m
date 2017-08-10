@@ -2,7 +2,7 @@
 //  BSTabBarViewController.m
 //  GraduationProject
 //
-//  Created by 孟玲旭 on 2017/4/27.
+//  Created by 郑淮予 on 2017/4/27.
 //  Copyright © 2017年 郑淮予. All rights reserved.
 //
 
@@ -70,21 +70,23 @@
 #pragma mark - 添加所有子控制器
 - (void)setupAllChildViewController
 {
-    // 视频
-    VideoViewController *videoVc = [[VideoViewController alloc] init];
-    BSNavigationViewController *nav = [[BSNavigationViewController alloc] initWithRootViewController:videoVc];
-    
-    [self addChildViewController:nav];
+    // 文章
+    EssayViewController *essayVc = [[EssayViewController alloc] init];
+    BSNavigationViewController *nav1 = [[BSNavigationViewController alloc] initWithRootViewController:essayVc];
+    [self addChildViewController:nav1];
     
     // 广播
     FMViewController *fmVc = [[FMViewController alloc] init];
     BSNavigationViewController *nav3 = [[BSNavigationViewController alloc] initWithRootViewController:fmVc];
     [self addChildViewController:nav3];
     
-    // 文章
-    EssayViewController *essayVc = [[EssayViewController alloc] init];
-    BSNavigationViewController *nav1 = [[BSNavigationViewController alloc] initWithRootViewController:essayVc];
-    [self addChildViewController:nav1];
+    
+    // 视频
+    VideoViewController *videoVc = [[VideoViewController alloc] init];
+    BSNavigationViewController *nav = [[BSNavigationViewController alloc] initWithRootViewController:videoVc];
+    
+    [self addChildViewController:nav];
+    
     
     // 我
     MeViewController *meVc = [[MeViewController alloc] init];
@@ -97,8 +99,8 @@
 - (void)setupAllTitleButton
 {
     // 0:视频
-    UINavigationController *nav = self.childViewControllers[0];
-    nav.tabBarItem.title = @"视频";
+    UINavigationController *nav = self.childViewControllers[2];
+    nav.tabBarItem.title = @"校友发布";
     nav.tabBarItem.image = [UIImage xmg_circleImageNamed:@"video"];
     // 快速生成一个没有渲染图片
     nav.tabBarItem.selectedImage = [UIImage imageOriginalWithName:@"video"];
@@ -112,7 +114,7 @@
     nav1.tabBarItem.selectedImage = [UIImage imageOriginalWithName:@"fm"];
     
     // 3.文章
-    UINavigationController *nav3 = self.childViewControllers[2];
+    UINavigationController *nav3 = self.childViewControllers[0];
     nav3.tabBarItem.title = @"文章";
     nav3.tabBarItem.image = [UIImage xmg_circleImageNamed:@"文章"];
     nav3.tabBarItem.selectedImage = [UIImage imageOriginalWithName:@"文章"];
@@ -128,7 +130,7 @@
 
 - (void)tabBarClickPlusButton:(BSTabBar *)tabBar {
     IssueMainViewController *Vc = [IssueMainViewController new];
-    [Vc setModalTransitionStyle:UIModalTransitionStylePartialCurl];
+    [Vc setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     [self presentViewController:Vc animated:YES completion:nil];
 }
 

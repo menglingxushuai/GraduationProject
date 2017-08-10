@@ -2,7 +2,7 @@
 //  MeViewController.m
 //  GraduationProject
 //
-//  Created by 孟玲旭 on 2017/4/27.
+//  Created by 郑淮予 on 2017/4/27.
 //  Copyright © 2017年 郑淮予. All rights reserved.
 //
 
@@ -11,17 +11,6 @@
 #import "LoginOutCell.h"
 #import "BSLoginAndRegistViewController.h"
 #import "LocationDownloadViewController.h"
-#import "MyIssueVideoViewController.h"
-
-#if TARGET_IPHONE_SIMULATOR
-
-#define SIMULATOR 1
-
-#elif TARGET_OS_IPHONE
-
-#define SIMULATOR 0
-
-#endif
 
 @interface MeViewController ()<UITableViewDelegate,UITableViewDataSource, LoginOutCellDelegete, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -75,7 +64,7 @@
 
 #pragma mark - tableView的代理
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -111,22 +100,14 @@
             cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
             return cell;
         }
+            
         case 2:{
-            
-            cell.textLabel.text = @"校友发布";
-            cell.detailTextLabel.text = @"";
-            
-            cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
-            return cell;
-        }
-            
-        case 3:{
             
             cell.textLabel.text = @"清除缓存";
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2fM", [ToolForRubbish getDiskSize]];
             return cell;
         }
-        case 4:{
+        case 3:{
             LoginOutCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OutCell" forIndexPath:indexPath];
             if ([NSString isBlankString:self.isLogin] == NO && [self.isLogin isEqualToString:@"Yes"]) {
                 [cell.loginOut setTitle:@"退出登录" forState:UIControlStateNormal];
@@ -148,7 +129,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         return 80;
-    } else if (indexPath.row == 4) {
+    } else if (indexPath.row == 3) {
         return 60;
     } else {
         return 40;
@@ -175,15 +156,10 @@
                 break;
             }
             case 2:{
-                MyIssueVideoViewController *vc = [MyIssueVideoViewController new];
-                [self.navigationController pushViewController:vc animated:YES];
+               [self clearHc];
                 break;
             }
-            case 3:{
-                [self clearHc];
-
-                break;
-            }
+            
             default:
                 break;
         }
@@ -250,6 +226,7 @@
                 _imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
                 _imagePicker.allowsEditing = YES;
                 [self presentViewController:_imagePicker animated:YES completion:nil];
+                
             }
             break;
         default:

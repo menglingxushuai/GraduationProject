@@ -2,7 +2,7 @@
 //  VideoViewController.m
 //  GraduationProject
 //
-//  Created by 孟玲旭 on 2017/4/27.
+//  Created by 郑淮予 on 2017/4/27.
 //  Copyright © 2017年 郑淮予. All rights reserved.
 //
 
@@ -10,6 +10,8 @@
 #import "VideoMainCell.h"
 #import "VideoDetailController.h"
 #import "VideoModel.h"
+#import "MyIssueVideoViewController.h"
+#import "AlumnusIssueViewController.h"
 @interface VideoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableview;
 @property (nonatomic, strong) NSMutableArray *allArray;
@@ -54,7 +56,7 @@
 
 
 - (void)initLayout {
-    self.title = @"视频";
+    self.title = @"校友发布";
     self.view.backgroundColor = WhiteColor;
     [self.view addSubview:self.tableview];
     [self.tableview registerNib:[UINib nibWithNibName:@"VideoMainCell" bundle:nil] forCellReuseIdentifier:@"VideoCell"];
@@ -68,12 +70,12 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 6;
+    return 2;
     
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
+    return (kWindowHeight - 64 - 49)*0.5;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -81,14 +83,34 @@
     VideoMainCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VideoCell" forIndexPath:indexPath];
 
     cell.img.image = [UIImage imageNamed:[NSString stringWithFormat:@"牧羊人%ld", indexPath.row + 1]];
-    
+    switch (indexPath.row) {
+        case 0:
+            cell.nameLabel.text = @"发布的视频";
+            break;
+            
+        default:
+            cell.nameLabel.text = @"发布的文章";
+            break;
+    }
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    VideoDetailController *vc = [VideoDetailController new];
-    [self.navigationController pushViewController:vc animated:YES];
+    
+    switch (indexPath.row) {
+        case 0:{
+            MyIssueVideoViewController *vc = [MyIssueVideoViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        default:{
+            AlumnusIssueViewController *Vc = [AlumnusIssueViewController new];
+            [self.navigationController pushViewController:Vc animated:YES];
+            break;
+        }
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
